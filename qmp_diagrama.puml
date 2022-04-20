@@ -1,4 +1,4 @@
-@startuml QMP
+@startuml qmp_diagrama
 
 class Prenda {
     String material
