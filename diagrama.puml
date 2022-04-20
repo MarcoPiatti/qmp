@@ -1,0 +1,19 @@
+@startuml QMP
+
+class Prenda {
+    String material
+    Color colorPrimario
+    Color colorSecundario
+}
+
+class TipoPrenda {
+    String nombre
+}
+
+Prenda --> "1" TipoPrenda
+
+enum CategoriaPrenda
+
+TipoPrenda --> "1" CategoriaPrenda
+
+@enduml
