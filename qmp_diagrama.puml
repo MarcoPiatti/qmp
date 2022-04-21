@@ -3,7 +3,7 @@
 class Prenda {
     String material
     Color colorPrimario
-    Color colorSecundario
+    Optional<Color> colorSecundario
 }
 
 class TipoPrenda {
