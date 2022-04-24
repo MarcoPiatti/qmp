@@ -45,7 +45,7 @@ public class PrendaTest {
   }
 
   private TipoPrenda unTipoPrendaCualquiera() {
-    return new TipoPrenda("pantaloncito", CategoriaPrenda.INFERIOR);
+    return TipoPrenda.PANTALON;
   }
 
 }
