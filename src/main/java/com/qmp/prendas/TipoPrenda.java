@@ -1,11 +1,14 @@
-package com.qmp;
+package com.qmp.prendas;
 
 import java.util.Objects;
 
 public enum TipoPrenda {
-  ZAPATO(CategoriaPrenda.CALZADO),
+  CHOMBA(CategoriaPrenda.SUPERIOR),
   CAMISA_MANGA_CORTA(CategoriaPrenda.SUPERIOR),
-  PANTALON(CategoriaPrenda.INFERIOR);
+  CAMISA(CategoriaPrenda.SUPERIOR),
+  PANTALON(CategoriaPrenda.INFERIOR),
+  ZAPATO(CategoriaPrenda.CALZADO),
+  ZAPATILLA(CategoriaPrenda.CALZADO),;
 
   CategoriaPrenda categoria;
 

@@ -25,4 +25,38 @@ enum CategoriaPrenda
 
 TipoPrenda --> "1" CategoriaPrenda
 
+class PrendaBuilder {
+    TipoPrenda tipo
+    CategoriaPrenda categoria
+    Trama trama
+    Material material
+    Color colorPrimario
+    Color colorSecundario
+
+    static PrendaBorradorConTipo agregarTipo()
+}
+
+class PrendaBorradorConTipo {
+    PrendaBuilder borrador
+    PrendaBorradorPreparada agregarAtributos()
+}
+
+PrendaBuilder ..> PrendaBorradorConTipo : pasa al estado
+
+class PrendaBorradorPreparada {
+    PrendaBuilder borrador
+    Prenda finalizarPrenda()
+}
+
+PrendaBorradorConTipo ..> PrendaBorradorPreparada : pasa al estado
+PrendaBorradorPreparada ..> Prenda : pasa al estado
+
+class Uniforme {
+    Prenda superior
+    Prenda inferior
+    Prenda calzado
+}
+
+Uniforme --> "3" Prenda : tiene
+
 @enduml

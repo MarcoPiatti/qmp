@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.prendas;
 
 public enum Material {
   ALGODON,
@@ -6,5 +6,7 @@ public enum Material {
   POLIESTER,
   JEAN,
   CUERO,
-  LINO
+  LINO,
+  PIQUE,
+  ACETATO
 }

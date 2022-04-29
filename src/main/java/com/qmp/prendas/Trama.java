@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.prendas;
 
 public enum Trama {
   LISA,
