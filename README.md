@@ -1,19 +1,9 @@
 # QMP
 
-## 1. Requerimientos
+## Solucion
 
-- Poder **cargar** prendas
-- Poder **saber** la categoria de una prenda
-(las categorias son: superior, inferior, calzado, accesorio)
-- Poder asignarle un tipo a una prenda (Obligatorio)
-- Poder asignarle un material a una prenda (Obligatorio)
-- Poder asignarle un color principal a una prenda (Obligatorio)
-- Poder asignarle un color secundario a una prenda (Optativo)
-- Un tipo de prenda debe relacionarse con una sola categoria
-
-## 2. Solucion
-
-![Diagrama UML de la solucion](qmp_diagrama.png)
+![Diagrama UML de la solucion](![ejemplo](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/MarcoPiatti/QMP/qmp_diagrama.puml)
+)
 	
 ## Comentarios
 
