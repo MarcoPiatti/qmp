@@ -27,29 +27,35 @@ TipoPrenda --> "1" CategoriaPrenda
 
 class PrendaBuilder {
     TipoPrenda tipo
-    CategoriaPrenda categoria
     Trama trama
     Material material
     Color colorPrimario
     Color colorSecundario
-
-    static PrendaBorradorConTipo agregarTipo()
+    tipo()
 }
 
-class PrendaBorradorConTipo {
+class PrendaSinTela {
     PrendaBuilder borrador
-    PrendaBorradorPreparada agregarAtributos()
+    tela()
 }
 
-PrendaBuilder ..> PrendaBorradorConTipo : pasa al estado
+PrendaBuilder ..> PrendaSinTela : tipo()
 
-class PrendaBorradorPreparada {
+class PrendaSinColor {
+    PrendaBorradorConTipo borrador
+    colores()
+}
+
+PrendaSinTela ..> PrendaSinColor : tela()
+
+class PrendaPreparada {
     PrendaBuilder borrador
-    Prenda finalizarPrenda()
+    build()
 }
 
-PrendaBorradorConTipo ..> PrendaBorradorPreparada : pasa al estado
-PrendaBorradorPreparada ..> Prenda : pasa al estado
+PrendaSinColor ..> PrendaPreparada : colores()
+
+PrendaPreparada ..> Prenda : build()
 
 class Uniforme {
     Prenda superior
@@ -58,5 +64,14 @@ class Uniforme {
 }
 
 Uniforme --> "3" Prenda : tiene
+
+abstract class UniformeFactory{
+    crearUniforme()
+    abstract crearPrendaSuperior()
+    abstract crearPrendaInferior()
+    abstract crearCalzado()
+}
+
+UniformeFactory ..> Uniforme : crea
 
 @enduml
