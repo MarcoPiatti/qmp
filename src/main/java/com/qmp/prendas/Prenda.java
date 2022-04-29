@@ -9,11 +9,11 @@ public class Prenda {
   Color colorPrimario;
   Optional<Color> colorSecundario;
 
-  protected Prenda(TipoPrenda tipo, Tela tela, Color colorPrimario, Color colorSecundario) {
+  protected Prenda(TipoPrenda tipo, Tela tela, Color colorPrimario, Optional<Color> colorSecundario) {
     this.tipo = tipo;
     this.tela = tela;
     this.colorPrimario = colorPrimario;
-    this.colorSecundario = Optional.ofNullable(colorSecundario);
+    this.colorSecundario = colorSecundario;
   }
 
   public CategoriaPrenda getCategoria() {
