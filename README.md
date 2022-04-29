@@ -2,7 +2,7 @@
 
 ## Solucion
 
-![Diagrama UML de la solucion](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/MarcoPiatti/QMP/qmp_diagrama.puml)
+![Diagrama UML de la solucion](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://https://raw.githubusercontent.com/MarcoPiatti/QMP/main/qmp_diagrama.puml)
 	
 ## Comentarios
 
