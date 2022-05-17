@@ -1,17 +1,24 @@
 package com.qmp.clima;
 
 public class ClimaLocator {
-  ClimaFeed provider;
+  
+  static ClimaLocator instance = new ClimaLocator();
+  
+  ClimaFeed feed;
 
-  ClimaLocator() {
-    provider = new AccuWeatherFeed();
+  private ClimaLocator() {
+    feed = new AccuWeatherFeed();
   }
 
-  public void setProvider(ClimaFeed provider) {
-    this.provider = provider;
+  public static ClimaLocator instance() {
+    return instance;
   }
 
-  public ClimaFeed getProvider() {
-    return provider;
+  public void setFeed(ClimaFeed feed) {
+    this.feed = feed;
+  }
+
+  public ClimaFeed getFeed() {
+    return feed;
   }
 }

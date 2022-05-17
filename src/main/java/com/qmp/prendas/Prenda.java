@@ -21,4 +21,8 @@ public class Prenda {
   public CategoriaPrenda getCategoria() {
     return tipo.getCategoria();
   }
+
+  public Double getTemperaturaMaxima() {
+    return tipo.getTemperaturaMaxima();
+  }
 }
