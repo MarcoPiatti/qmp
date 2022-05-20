@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.atuendos;
 
 import java.util.ArrayList;
 import java.util.List;

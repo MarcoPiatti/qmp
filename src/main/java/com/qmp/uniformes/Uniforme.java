@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.uniformes;
 
 import java.util.Objects;
 import com.qmp.prendas.*;

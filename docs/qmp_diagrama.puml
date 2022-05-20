@@ -1,0 +1,70 @@
+@startuml qmp_diagrama
+
+class Prenda {
+    Color colorPrimario
+    Optional<Color> colorSecundario
+}
+
+enum Trama
+enum Material
+
+Prenda --> "1" Trama
+Prenda --> "1" Material
+
+enum TipoPrenda {
+    CategoriaPrenda categoria
+}
+
+Prenda --> "1" TipoPrenda
+
+enum CategoriaPrenda
+
+TipoPrenda --> "1" CategoriaPrenda
+
+class BorradorPrenda
+
+BorradorPrenda ..> Prenda : build()
+
+class Uniforme {
+    Prenda superior
+    Prenda inferior
+    Prenda calzado
+}
+
+Uniforme --> "3" Prenda : tiene
+
+abstract class UniformeFactory{
+    crearUniforme()
+    abstract crearPrendaSuperior()
+    abstract crearPrendaInferior()
+    abstract crearCalzado()
+}
+
+UniformeFactory ..> Uniforme : crea
+
+class Atuendo
+
+Atuendo --> "4..*" Prenda : tiene
+
+class SugerenciaAtuendo
+
+SugerenciaAtuendo ..> Atuendo : crea
+
+interface ClimaFeed {
+    temperaturaCelsius()
+}
+
+class ClimaLocator
+
+ClimaLocator --> "1" ClimaFeed
+
+class AccuWeatherAPI
+
+class AccuWeatherFeed
+
+ClimaFeed <|.. AccuWeatherFeed 
+AccuWeatherFeed --> "1" AccuWeatherAPI
+
+SugerenciaAtuendo ..> ClimaLocator : solicita
+
+@enduml

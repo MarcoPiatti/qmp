@@ -1,4 +1,4 @@
-package com.qmp;
+package com.qmp.uniformes;
 
 import com.qmp.prendas.Prenda;
 
