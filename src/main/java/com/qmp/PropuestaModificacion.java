@@ -2,33 +2,29 @@ package com.qmp;
 
 import com.qmp.prendas.Prenda;
 
-public class PropuestaModificacion {
+public abstract class PropuestaModificacion {
   Prenda prenda;
   Guardarropa guardarropa;
-  OperacionPropuesta operacion;
   EstadoPropuesta estado;
 
-  public PropuestaModificacion(Prenda prenda, Guardarropa guardarropa, OperacionPropuesta tipo) {
+  protected PropuestaModificacion(Prenda prenda, Guardarropa guardarropa) {
     this.prenda = prenda;
     this.guardarropa = guardarropa;
-    this.operacion = tipo;
     this.estado = EstadoPropuesta.PENDIENTE;
   }
 
+  public abstract void ejecutar();
+  public abstract void revertir();
+
   public void aceptar() {
-    if (estado != EstadoPropuesta.PENDIENTE) return;
-    operacion.ejecutar(prenda, guardarropa);
-    estado = EstadoPropuesta.ACEPTADA;
+    estado.aceptar(this);
   }
 
   public void rechazar() {
-    if (estado != EstadoPropuesta.PENDIENTE) return;
-    estado = EstadoPropuesta.RECHAZADA;
+    estado.rechazar(this);
   }
 
-  public void revertir() {
-    if (estado == EstadoPropuesta.PENDIENTE) return;
-    operacion.revertir(prenda, guardarropa);
-    estado = EstadoPropuesta.PENDIENTE;
+  public void deshacer() {
+    estado.deshacer(this);
   }
 }
